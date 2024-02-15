@@ -1,0 +1,112 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst Computer_System.VGA_Subsystem.VGA_Pixel_FIFO -pg 1
+preplace inst Computer_System.ARM_A9_HPS.fpga_interfaces -pg 1
+preplace inst Computer_System.VGA_Subsystem -pg 1 -lvl 2 -y 2170
+preplace inst Computer_System.ARM_A9_HPS.arm_a9_0 -pg 1
+preplace inst Computer_System.my_pio_xnew -pg 1 -lvl 6 -y 1020
+preplace inst Computer_System.VGA_Subsystem.VGA_Pixel_DMA -pg 1
+preplace inst Computer_System.ARM_A9_HPS.axi_ocram -pg 1
+preplace inst Computer_System.ARM_A9_HPS.clkmgr -pg 1
+preplace inst Computer_System.ARM_A9_HPS.arm_a9_1 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.clk_0 -pg 1
+preplace inst Computer_System.my_pio_x0 -pg 1 -lvl 6 -y 690
+preplace inst Computer_System.VGA_Subsystem.VGA_Char_Buffer -pg 1
+preplace inst Computer_System.ARM_A9_HPS.wd_timer0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.hps_io -pg 1
+preplace inst Computer_System.ARM_A9_HPS.wd_timer1 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.f2s_periph_ref_clk -pg 1
+preplace inst Computer_System.ARM_A9_HPS.i2c0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.qspi -pg 1
+preplace inst Computer_System.my_pio_sigma -pg 1 -lvl 6 -y 580
+preplace inst Computer_System.my_pio_clknew -pg 1 -lvl 6 -y 250
+preplace inst Computer_System.ARM_A9_HPS.i2c1 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.i2c2 -pg 1
+preplace inst Computer_System.VGA_Subsystem.VGA_Alpha_Blender -pg 1
+preplace inst Computer_System.ARM_A9_HPS.uart0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.i2c3 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.uart1 -pg 1
+preplace inst Computer_System.VGA_Subsystem.Sys_Clk -pg 1
+preplace inst Computer_System.ARM_A9_HPS -pg 1 -lvl 5 -y 90
+preplace inst Computer_System.my_pio_ynew -pg 1 -lvl 6 -y 800
+preplace inst Computer_System.ARM_A9_HPS.L2 -pg 1
+preplace inst Computer_System.my_pio_reset -pg 1 -lvl 6 -y 360
+preplace inst Computer_System.VGA_Subsystem.VGA_PLL.reset_from_locked -pg 1
+preplace inst Computer_System.my_pio_z0 -pg 1 -lvl 6 -y 30
+preplace inst Computer_System.System_PLL.reset_from_locked -pg 1
+preplace inst Computer_System.ARM_A9_HPS.fpgamgr -pg 1
+preplace inst Computer_System.ARM_A9_HPS.eosc1 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.gpio0 -pg 1
+preplace inst Computer_System.my_pio_znew -pg 1 -lvl 6 -y 1130
+preplace inst Computer_System.VGA_Subsystem.VGA_PLL.video_pll -pg 1
+preplace inst Computer_System.ARM_A9_HPS.eosc2 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.gpio1 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.gpio2 -pg 1
+preplace inst Computer_System.Onchip_SRAM -pg 1 -lvl 4 -y 1380
+preplace inst Computer_System.VGA_Subsystem.VGA_Pixel_RGB_Resampler -pg 1
+preplace inst Computer_System.System_PLL -pg 1 -lvl 1 -y 2080
+preplace inst Computer_System.ARM_A9_HPS.usb0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.axi_sdram -pg 1
+preplace inst Computer_System.Pixel_DMA_Addr_Translation -pg 1 -lvl 2 -y 1550
+preplace inst Computer_System.ARM_A9_HPS.usb1 -pg 1
+preplace inst Computer_System.AV_Config -pg 1 -lvl 4 -y 830
+preplace inst Computer_System.ARM_A9_HPS.dcan0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.dcan1 -pg 1
+preplace inst Computer_System.my_pio_beta -pg 1 -lvl 6 -y 140
+preplace inst Computer_System.my_pio_rho -pg 1 -lvl 6 -y 470
+preplace inst Computer_System.ARM_A9_HPS.nand0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.sdrctl -pg 1
+preplace inst Computer_System.ARM_A9_HPS.spim0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.rstmgr -pg 1
+preplace inst Computer_System.ARM_A9_HPS.spim1 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.hps_io.border -pg 1
+preplace inst Computer_System.ARM_A9_HPS.l3regs -pg 1
+preplace inst Computer_System.ARM_A9_HPS.scu -pg 1
+preplace inst Computer_System.VGA_Subsystem.VGA_Controller -pg 1
+preplace inst Computer_System.my_pio_y0 -pg 1 -lvl 6 -y 910
+preplace inst Computer_System.SDRAM -pg 1 -lvl 4 -y 1740
+preplace inst Computer_System.ARM_A9_HPS.timer -pg 1
+preplace inst Computer_System.ARM_A9_HPS.timer0 -pg 1
+preplace inst Computer_System.VGA_Subsystem.VGA_Dual_Clock_FIFO -pg 1
+preplace inst Computer_System.ARM_A9_HPS.f2s_sdram_ref_clk -pg 1
+preplace inst Computer_System.ARM_A9_HPS.arm_gic_0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.timer1 -pg 1
+preplace inst Computer_System.System_PLL.sys_pll -pg 1
+preplace inst Computer_System.ARM_A9_HPS.timer2 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.sdmmc -pg 1
+preplace inst Computer_System.ARM_A9_HPS.timer3 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.bridges -pg 1
+preplace inst Computer_System.ARM_A9_HPS.gmac0 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.gmac1 -pg 1
+preplace inst Computer_System.ARM_A9_HPS.sysmgr -pg 1
+preplace inst Computer_System.VGA_Subsystem.VGA_PLL -pg 1
+preplace inst Computer_System -pg 1 -lvl 1 -y 40 -regml 8 -regy -20
+preplace inst Computer_System.ARM_A9_HPS.dma -pg 1
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)my_pio_znew.external_connection,(SLAVE)Computer_System.my_pio_znew_external_connection) 1 0 6 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ 1160 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.my_pio_z0_external_connection,(SLAVE)my_pio_z0.external_connection) 1 0 6 NJ 40 NJ 40 NJ 40 NJ 40 NJ 30 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.my_pio_rho_external_connection,(SLAVE)my_pio_rho.external_connection) 1 0 6 NJ 500 NJ 500 NJ 500 NJ 500 NJ 500 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)System_PLL.ref_reset,(SLAVE)Computer_System.system_pll_ref_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.av_config,(SLAVE)AV_Config.external_interface) 1 0 4 NJ 880 NJ 880 NJ 880 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)my_pio_sigma.external_connection,(SLAVE)Computer_System.my_pio_sigma_external_connection) 1 0 6 NJ 610 NJ 610 NJ 610 NJ 610 NJ 610 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.vga_pll_ref_reset,(SLAVE)VGA_Subsystem.vga_pll_ref_reset) 1 0 2 NJ 2320 NJ
+preplace netloc INTERCONNECT<net_container>Computer_System</net_container>(SLAVE)VGA_Subsystem.char_buffer_slave,(SLAVE)Onchip_SRAM.s2,(MASTER)ARM_A9_HPS.h2f_axi_master,(SLAVE)SDRAM.s1,(MASTER)VGA_Subsystem.pixel_dma_master) 1 1 5 530 2130 870 2130 1190 1370 NJ 1370 2150
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)my_pio_clknew.external_connection,(SLAVE)Computer_System.my_pio_clknew_external_connection) 1 0 6 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)my_pio_y0.external_connection,(SLAVE)Computer_System.my_pio_y0_external_connection) 1 0 6 NJ 960 NJ 960 NJ 960 NJ 960 NJ 940 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.sdram,(SLAVE)SDRAM.wire) 1 0 4 NJ 1810 NJ 1810 NJ 1810 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.my_pio_beta_external_connection,(SLAVE)my_pio_beta.external_connection) 1 0 6 NJ 60 NJ 60 NJ 60 NJ 60 NJ 50 NJ
+preplace netloc INTERCONNECT<net_container>Computer_System</net_container>(SLAVE)my_pio_znew.reset,(MASTER)ARM_A9_HPS.h2f_reset,(SLAVE)my_pio_y0.reset,(SLAVE)my_pio_reset.reset,(SLAVE)VGA_Subsystem.sys_reset,(SLAVE)my_pio_rho.reset,(SLAVE)my_pio_x0.reset,(SLAVE)SDRAM.reset,(SLAVE)Pixel_DMA_Addr_Translation.reset,(SLAVE)my_pio_clknew.reset,(SLAVE)my_pio_ynew.reset,(SLAVE)Onchip_SRAM.reset1,(SLAVE)my_pio_xnew.reset,(SLAVE)my_pio_z0.reset,(MASTER)System_PLL.reset_source,(SLAVE)my_pio_beta.reset,(SLAVE)AV_Config.reset,(SLAVE)my_pio_sigma.reset) 1 1 5 450 1660 NJ 1660 1170 1070 NJ 1070 2170
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)VGA_Subsystem.vga_pll_ref_clk,(SLAVE)Computer_System.vga_pll_ref_clk) 1 0 2 NJ 2300 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)ARM_A9_HPS.memory,(SLAVE)Computer_System.memory) 1 0 5 NJ 200 NJ 200 NJ 200 NJ 200 NJ
+preplace netloc FAN_OUT<net_container>Computer_System</net_container>(MASTER)System_PLL.sys_clk,(SLAVE)AV_Config.clk,(SLAVE)VGA_Subsystem.sys_clk,(SLAVE)my_pio_z0.clk,(SLAVE)my_pio_ynew.clk,(SLAVE)ARM_A9_HPS.h2f_lw_axi_clock,(SLAVE)my_pio_y0.clk,(SLAVE)my_pio_rho.clk,(SLAVE)my_pio_xnew.clk,(SLAVE)my_pio_sigma.clk,(SLAVE)SDRAM.clk,(SLAVE)my_pio_x0.clk,(SLAVE)Pixel_DMA_Addr_Translation.clock,(SLAVE)my_pio_reset.clk,(SLAVE)my_pio_clknew.clk,(SLAVE)ARM_A9_HPS.f2h_axi_clock,(SLAVE)my_pio_znew.clk,(SLAVE)Onchip_SRAM.clk1,(SLAVE)my_pio_beta.clk,(SLAVE)ARM_A9_HPS.h2f_axi_clock) 1 1 5 430 1640 NJ 1640 1150 940 1730 920 2250
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.vga,(SLAVE)VGA_Subsystem.vga) 1 0 2 NJ 2280 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)my_pio_xnew.external_connection,(SLAVE)Computer_System.my_pio_xnew_external_connection) 1 0 6 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ
+preplace netloc POINT_TO_POINT<net_container>Computer_System</net_container>(SLAVE)VGA_Subsystem.pixel_dma_control_slave,(MASTER)Pixel_DMA_Addr_Translation.master) 1 1 2 490 2110 870
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)my_pio_ynew.external_connection,(SLAVE)Computer_System.my_pio_ynew_external_connection) 1 0 6 NJ 820 NJ 820 NJ 820 NJ 820 NJ 830 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.my_pio_reset_external_connection,(SLAVE)my_pio_reset.external_connection) 1 0 6 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.hps_io,(SLAVE)ARM_A9_HPS.hps_io) 1 0 5 NJ 140 NJ 140 NJ 140 NJ 140 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)my_pio_x0.external_connection,(SLAVE)Computer_System.my_pio_x0_external_connection) 1 0 6 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)System_PLL.ref_clk,(SLAVE)Computer_System.system_pll_ref_clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(MASTER)System_PLL.sdram_clk,(MASTER)Computer_System.sdram_clk) 1 1 7 NJ 2090 NJ 2090 NJ 2090 NJ 2090 NJ 2090 NJ 2090 NJ
+preplace netloc FAN_OUT<net_container>Computer_System</net_container>(SLAVE)VGA_Subsystem.char_buffer_control_slave,(SLAVE)my_pio_znew.s1,(SLAVE)my_pio_z0.s1,(SLAVE)my_pio_beta.s1,(SLAVE)my_pio_x0.s1,(SLAVE)my_pio_reset.s1,(SLAVE)my_pio_y0.s1,(SLAVE)Pixel_DMA_Addr_Translation.slave,(SLAVE)my_pio_sigma.s1,(SLAVE)my_pio_xnew.s1,(SLAVE)my_pio_rho.s1,(SLAVE)my_pio_clknew.s1,(SLAVE)my_pio_ynew.s1,(MASTER)ARM_A9_HPS.h2f_lw_axi_master,(SLAVE)AV_Config.avalon_av_config_slave) 1 1 5 510 1540 NJ 1540 1130 1090 NJ 1090 2190
+levelinfo -pg 1 0 200 3020
+levelinfo -hier Computer_System 210 280 690 1110 1550 1960 2430 2910 2930

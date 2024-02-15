@@ -1,0 +1,95 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+vDDA
+Z0 !s110 1707509574
+!i10b 1
+!s100 KM8fdMGm[f>L`AR6U0n:62
+ILNM_zRLUhD<J2^C:B^NE`2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/intelFPGA_lite/lab1/lab1modelsim
+Z3 w1707509464
+Z4 8C:/intelFPGA_lite/lab1/lab1modelsim/DDS.v
+Z5 FC:/intelFPGA_lite/lab1/lab1modelsim/DDS.v
+L0 4
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1707509574.000000
+Z8 !s107 C:/intelFPGA_lite/lab1/lab1modelsim/DDS.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA_lite/lab1/lab1modelsim/DDS.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@d@d@a
+vintegrator
+R0
+!i10b 1
+!s100 E]<S7kUFOM@WbMW:cP[bE1
+IB=[5:05gci:>0?]<AO@dO2
+R1
+R2
+R3
+R4
+R5
+L0 185
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vsigned_mult
+R0
+!i10b 1
+!s100 j>DCABb]?4<4VaV5ARJ8:2
+IVQOVB3I3dcOlEl`MfUmQ93
+R1
+R2
+R3
+R4
+R5
+L0 209
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vtestbench
+R0
+!i10b 1
+!s100 =UXmhZ]>d6l0?YbVo9?QL3
+IkhAeo^2CiP14>H<9W5]^l2
+R1
+R2
+w1707509465
+8C:/intelFPGA_lite/lab1/lab1modelsim/testbench_1.v
+FC:/intelFPGA_lite/lab1/lab1modelsim/testbench_1.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/intelFPGA_lite/lab1/lab1modelsim/testbench_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA_lite/lab1/lab1modelsim/testbench_1.v|
+!i113 1
+R10
+R11

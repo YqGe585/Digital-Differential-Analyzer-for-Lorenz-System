@@ -1,0 +1,142 @@
+IP Upgrade report for DE1_SoC_Computer
+Sat Feb  3 21:27:43 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. IP Upgrade Summary
+  3. Failed Upgrade IP Components
+  4. IP Upgrade Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; IP Upgrade Summary                                                            ;
++------------------------------+------------------------------------------------+
+; IP Components Upgrade Status ; Passed - Sat Feb  3 21:27:43 2024              ;
+; Quartus Prime Version        ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                ; DE1_SoC_Computer                               ;
+; Top-level Entity Name        ; DE1_SoC_Computer                               ;
+; Family                       ; Cyclone V                                      ;
++------------------------------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Failed Upgrade IP Components                                                                                                                                                                        ;
++-----------------+----------------+---------+-----------------------------------------------+----------------------+-----------------+---------------------------------------------------------------+
+; Entity Name     ; Component Name ; Version ; Original Source File                          ; Generation File Path ; New Source File ; Message                                                       ;
++-----------------+----------------+---------+-----------------------------------------------+----------------------+-----------------+---------------------------------------------------------------+
+; Computer_System ; Qsys           ; 18.1    ; Computer_System/synthesis/Computer_System.qip ; Computer_System.qsys ;                 ; Error upgrading Platform Designer file "Computer_System.qsys" ;
++-----------------+----------------+---------+-----------------------------------------------+----------------------+-----------------+---------------------------------------------------------------+
+
+
++---------------------+
+; IP Upgrade Messages ;
++---------------------+
+Info (11902): Backing up file "Computer_System.qsys" to "Computer_System.BAK.qsys"
+Info (11902): Backing up file "Computer_System/synthesis/Computer_System.v" to "Computer_System.BAK.v"
+Info (11837): Started upgrading IP component Qsys with file "Computer_System.qsys"
+Info: 2024.02.03.21:26:54 Info: Starting to upgrade the IP cores in the Platform Designer system
+Info: 2024.02.03.21:26:54 Info: Finished upgrading the ip cores
+Info: 2024.02.03.21:27:14 Info: Saving generation log to C:/intelFPGA_lite/computer_640_16bit_video/verilog/Computer_System
+Info: 2024.02.03.21:27:14 Info: Starting: Create simulation model
+Info: 2024.02.03.21:27:14 Info: qsys-generate C:\intelFPGA_lite\computer_640_16bit_video\verilog\Computer_System.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\intelFPGA_lite\computer_640_16bit_video\verilog\Computer_System\simulation --family="Cyclone V" --part=5CSEMA5F31C6
+Info: 2024.02.03.21:27:14 Info: Loading verilog
+Info: 2024.02.03.21:27:15 Info: Reading input file
+Info: 2024.02.03.21:27:15 Info: Adding ARM_A9_HPS [altera_hps 23.1]
+Info: 2024.02.03.21:27:15 Info: Parameterizing module ARM_A9_HPS
+Info: 2024.02.03.21:27:15 Info: Adding AV_Config [altera_up_avalon_audio_and_video_config 18.0]
+Info: 2024.02.03.21:27:15 Info: Parameterizing module AV_Config
+Info: 2024.02.03.21:27:15 Info: Adding Audio_Subsystem [Audio_Subsystem 1.0]
+Info: 2024.02.03.21:27:16 Info: Parameterizing module Audio_Subsystem
+Info: 2024.02.03.21:27:16 Info: Adding Bus_master_audio [altera_up_external_bus_to_avalon_bridge 18.0]
+Info: 2024.02.03.21:27:16 Info: Parameterizing module Bus_master_audio
+Info: 2024.02.03.21:27:16 Info: Adding Onchip_SRAM [altera_avalon_onchip_memory2 23.1]
+Info: 2024.02.03.21:27:16 Info: Parameterizing module Onchip_SRAM
+Info: 2024.02.03.21:27:16 Info: Adding Pixel_DMA_Addr_Translation [altera_up_avalon_video_dma_ctrl_addr_trans 18.0]
+Info: 2024.02.03.21:27:16 Info: Parameterizing module Pixel_DMA_Addr_Translation
+Info: 2024.02.03.21:27:16 Info: Adding SDRAM [altera_avalon_new_sdram_controller 18.1]
+Warning: 2024.02.03.21:27:16 Warning: SDRAM: Component type altera_avalon_new_sdram_controller is not in the library
+Info: 2024.02.03.21:27:16 Info: Parameterizing module SDRAM
+Info: 2024.02.03.21:27:16 Info: Adding System_PLL [altera_up_avalon_sys_sdram_pll 18.0]
+Info: 2024.02.03.21:27:16 Info: Parameterizing module System_PLL
+Info: 2024.02.03.21:27:16 Info: Adding VGA_Subsystem [VGA_Subsystem 1.0]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module VGA_Subsystem
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_beta [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_beta
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_clknew [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_clknew
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_reset [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_reset
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_rho [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_rho
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_sigma [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_sigma
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_x0 [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_x0
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_xnew [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_xnew
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_y0 [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_y0
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_ynew [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_ynew
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_z0 [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_z0
+Info: 2024.02.03.21:27:18 Info: Adding my_pio_znew [altera_avalon_pio 23.1]
+Info: 2024.02.03.21:27:18 Info: Parameterizing module my_pio_znew
+Info: 2024.02.03.21:27:18 Info: Building connections
+Info: 2024.02.03.21:27:18 Info: Parameterizing connections
+Info: 2024.02.03.21:27:18 Info: Validating
+Info: 2024.02.03.21:27:24 Info: Done reading input file
+Info: 2024.02.03.21:27:31 Info: Computer_System.ARM_A9_HPS: HPS Main PLL counter settings: n = 0  m = 73
+Info: 2024.02.03.21:27:31 Info: Computer_System.ARM_A9_HPS: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: 2024.02.03.21:27:31 Warning: Computer_System.ARM_A9_HPS: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: 2024.02.03.21:27:31 Warning: Computer_System.ARM_A9_HPS: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Warning: 2024.02.03.21:27:31 Warning: Computer_System.Pixel_DMA_Addr_Translation.master: Master needs a minimum address width of 3 bits (has 2)
+Error: 2024.02.03.21:27:31 Error: Computer_System.SDRAM: Component altera_avalon_new_sdram_controller 18.1 not found or could not be instantiated
+Info: 2024.02.03.21:27:31 Info: Computer_System.System_PLL: Refclk Freq: 50.0
+Info: 2024.02.03.21:27:31 Info: Computer_System.VGA_Subsystem.VGA_Char_Buffer: Character Resolution: 80 x 60
+Info: 2024.02.03.21:27:31 Info: Computer_System.VGA_Subsystem.VGA_Controller: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Info: 2024.02.03.21:27:31 Info: Computer_System.VGA_Subsystem.VGA_Pixel_RGB_Resampler: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Warning: 2024.02.03.21:27:31 Warning: Computer_System.VGA_Subsystem.VGA_Pixel_RGB_Resampler: VGA_Pixel_RGB_Resampler.avalon_rgb_slave must be connected to an Avalon-MM master
+Info: 2024.02.03.21:27:31 Info: Computer_System.my_pio_xnew: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2024.02.03.21:27:31 Info: Computer_System.my_pio_ynew: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2024.02.03.21:27:31 Info: Computer_System.my_pio_znew: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: 2024.02.03.21:27:31 Warning: Computer_System.Onchip_SRAM: Onchip_SRAM.s1 must be connected to an Avalon-MM master
+Error: 2024.02.03.21:27:31 Error: Computer_System.SDRAM.s1: Data width must be of power of two and between 8 and 4096
+Info: 2024.02.03.21:27:32 Info: Computer_System: Generating Computer_System "Computer_System" for SIM_VERILOG
+Error: 2024.02.03.21:27:43 Error: null
+Info (11904): Restoring file "Computer_System.BAK.qsys" to "Computer_System.qsys"
+Error (14923): Error upgrading Platform Designer file "Computer_System.qsys"
+Error (11890): Unable to automatically upgrade Platform Designer component. Please manually upgrade "Computer_System.qsys" in Platform Designer
+Error (23031): Evaluation of Tcl script c:/intelfpga_lite/23.1std/quartus/common/tcl/internal/ip_regen/ip_regen.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 6 errors, 7 warnings
+    Error: Peak virtual memory: 4882 megabytes
+    Error: Processing ended: Sat Feb  3 21:27:47 2024
+    Error: Elapsed time: 00:01:22
+    Error: Total CPU time (on all processors): 00:00:56
+
+
