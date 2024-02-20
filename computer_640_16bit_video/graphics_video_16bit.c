@@ -197,11 +197,12 @@ int main(void)
 	VGA_text (1, 51, text_bottom_row);
 	VGA_text (1, 52, text_next);
 	*(my_pio_reset_write_ptr) = 0;
-	usleep(5);
-	*(my_pio_reset_write_ptr) = 0xFFFFFFFF;
-	usleep(5);
+    *(my_pio_reset_write_ptr) = 0xFFFFFFFF;
+	*(my_pio_clk_write_ptr) = 0;
+	*(my_pio_clk_write_ptr) = 0xFFFFFFFF;
+	*(my_pio_clk_write_ptr) = 0;
 	*(my_pio_reset_write_ptr) = 0;
-	usleep(5);
+
 	
 	// R bits 11-15 mask 0xf800
 	// G bits 5-10  mask 0x07e0
@@ -260,16 +261,13 @@ int main(void)
 		// set frame rate
 		//usleep(17000);
 		*(my_pio_clk_write_ptr) = 0;
-		usleep(5000);
 		*(my_pio_clk_write_ptr) = 0xFFFFFFFF;
-		usleep(5000);
-		*(my_pio_clk_write_ptr) = 0;
-		usleep(5000);
 		VGA_PIXEL( (140+(int)(4*fix2float(*(my_pio_x_read_ptr)))),(80+(int)(4*fix2float(*(my_pio_z_read_ptr)))),green );
 		VGA_PIXEL( (480+(int)(4*fix2float(*(my_pio_y_read_ptr)))),(80+(int)(4*fix2float(*(my_pio_z_read_ptr)))),red );
 		VGA_PIXEL( (300+(int)(4*fix2float(*(my_pio_x_read_ptr)))),(340+(int)(4*fix2float(*(my_pio_y_read_ptr)))),yellow );
 		printf("%d %d %d\n", fix2int(*(my_pio_x_read_ptr)), fix2int(*(my_pio_y_read_ptr)), fix2int(*(my_pio_z_read_ptr)));
 		//printf("%u %u\n", *(my_pio_x_read_ptr), *(my_pio_z_read_ptr));
+		usleep(20000);
 	} // end while(1)
 } // end main
 

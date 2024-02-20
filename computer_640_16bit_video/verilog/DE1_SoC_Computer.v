@@ -385,42 +385,30 @@ wire signed [26:0] sigma;
 wire signed [26:0] beta;
 wire signed [26:0] rho;
 
-//DDA ins1(.clk(CLOCK_50),
-// .reset(~KEY[0]),
-// .x0(x0),
-// .y0(y0),
-// .z0(z0),
-// .sigma(sigma),
-// .beta(beta),
-// .rho(rho),
+// DDA ins1(.clk(clknew),
+// .reset(reset[0]),
+// .x0({7'b1111111,20'b0}),
+// .y0(27'd104857),
+// .z0(27'd26214400),
+// .sigma(27'd10485760),
+// .beta(27'd2796202),
+// .rho(27'd29360128),
 // .xnew(xnew),
 // .ynew(ynew),
 // .znew(znew)
 // );
-
-
-always @ (*) begin
-	if(~KEY[3]) begin
-		clk_test = CLOCK_50;
-	end
-	else begin
-		clk_test = clknew[0];
-	end
-end
-
- DDA ins1(.clk(clk_test),
- .reset(reset[0]|~KEY[0]),
- .x0({7'b1111111,20'b0}),
- .y0(27'd104857),
- .z0(27'd26214400),
- .sigma(27'd10485760),
- .beta(27'd2796202),
- .rho(27'd29360128),
+DDA ins1(.clk(clknew[0]),
+ .reset(reset[0]),
+ .x0(x0),
+ .y0(y0),
+ .z0(z0),
+ .sigma(sigma),
+ .beta(beta),
+ .rho(rho),
  .xnew(xnew),
  .ynew(ynew),
  .znew(znew)
  );
-
 
 //=======================================================
 // Bus controller for AVALON bus-master
@@ -454,10 +442,34 @@ assign LEDR = fifo_space ;
 //assign bus_byte_enable = 4'b1111;
 
 // DDS signals
-reg [31:0] dds_accum ;
+//reg [31:0] dds_accum ;
+reg [31:0] dds_accum_x ;
+reg [31:0] dds_accum_y ;
+reg [31:0] dds_accum_z ;
 // DDS LUT
-wire [15:0] sine_out ;
-sync_rom sineTable(CLOCK_50, dds_accum[31:24], sine_out);
+wire signed [15:0] sine_out ;
+wire signed [15:0] sine_out_x;
+wire signed [15:0] sine_out_y;
+wire signed [15:0] sine_out_z;
+
+
+wire [31:0] dds_increment_out_x;
+wire [31:0] dds_increment_out_y;
+wire [31:0] dds_increment_out_z;
+wire [31:0] dds_increment_out;
+
+sync_rom sineTable1(CLOCK_50, dds_accum_x[31:24], sine_out_x);
+sync_rom sineTable2(CLOCK_50, dds_accum_y[31:24], sine_out_y);
+sync_rom sineTable3(CLOCK_50, dds_accum_z[31:24], sine_out_z);
+
+
+
+freq_LUT freq1(.address(xnew[25:20]), .dds_increment_out(dds_increment_out_x));
+freq_LUT freq2(.address(ynew[25:20]), .dds_increment_out(dds_increment_out_y));
+freq_LUT freq3(.address(znew[25:20]), .dds_increment_out(dds_increment_out_z));
+
+assign sine_out = (sine_out_x>>>2) + (sine_out_y>>>2) + (sine_out_z>>>2);
+
 
 // get some signals exposed
 // connect bus master signals to i/o for probes
@@ -507,7 +519,10 @@ always @(posedge CLOCK_50) begin //CLOCK_50
 		// IF SW=10'h200 
 		// and Fout = (sample_rate)/(2^32)*{SW[9:0], 16'b0}
 		// then Fout=48000/(2^32)*(2^25) = 375 Hz
-		dds_accum <= dds_accum + {SW[9:0], 16'b0} ;
+		//dds_accum <= dds_accum + {SW[9:0], 16'b0} ;
+		dds_accum_x <= dds_accum_x + dds_increment_out_x;
+      dds_accum_y <= dds_accum_y + dds_increment_out_y;
+		dds_accum_z <= dds_accum_z + dds_increment_out_z;
 		// convert 16-bit table to 32-bit format
 		bus_write_data <= (sine_out << 16) ;
 		bus_addr <= audio_left_address ;
@@ -610,12 +625,12 @@ Computer_System The_System (
 	.my_pio_xnew_external_connection_export	({{5{xnew[26]}},xnew}),
 	.my_pio_ynew_external_connection_export	({{5{ynew[26]}},ynew}),
 	.my_pio_znew_external_connection_export	({{5{znew[26]}},znew}),
-	.my_pio_x0_external_connection_export({{5{x0[26]}},x0}),
-	.my_pio_y0_external_connection_export({{5{y0[26]}},y0}),
-	.my_pio_z0_external_connection_export({{5{z0[26]}},z0}),
-	.my_pio_sigma_external_connection_export({{5{sigma[26]}},sigma}),
-	.my_pio_beta_external_connection_export({{5{beta[26]}},beta}),
-	.my_pio_rho_external_connection_export({{5{rho[26]}},rho}),
+	.my_pio_x0_external_connection_export({5'b0,x0}),
+	.my_pio_y0_external_connection_export({5'b0,y0}),
+	.my_pio_z0_external_connection_export({5'b0,z0}),
+	.my_pio_sigma_external_connection_export({5'b0,sigma}),
+	.my_pio_beta_external_connection_export({5'b0,beta}),
+	.my_pio_rho_external_connection_export({5'b0,rho}),
 	.my_pio_clknew_external_connection_export(clknew),
 	.my_pio_reset_external_connection_export(reset),
 	
@@ -1173,5 +1188,77 @@ begin
 			8'hff: sine = 16'hfe6e ;
 	endcase
 end
+
 endmodule
+
 //////////////////////////////////////////////////
+
+
+
+
+
+module freq_LUT (
+    input wire [5:0] address,
+    output wire [31:0] dds_increment_out
+) ;
+reg [31:0] dds_increment ; 
+always@(address)
+begin
+    case(address)
+        6'd0: dds_increment=32'd2460658;
+        6'd1: dds_increment=32'd2762200;
+        6'd2: dds_increment=32'd2925946;
+        6'd3: dds_increment=32'd3284755;
+        6'd4: dds_increment=32'd3686513;
+        6'd5: dds_increment=32'd3905735;
+        6'd6: dds_increment=32'd4384445;
+        6'd7: dds_increment=32'd4921316;
+        6'd8: dds_increment=32'd5524401;
+        6'd9: dds_increment=32'd5852787;
+        6'd10: dds_increment=32'd6569510;
+        6'd11: dds_increment=32'd7373921;
+        6'd12: dds_increment=32'd7812366;
+        6'd13: dds_increment=32'd8768891;
+        6'd14: dds_increment=32'd9842633;
+        6'd15: dds_increment=32'd11047908;
+        6'd16: dds_increment=32'd11704680;
+        6'd17: dds_increment=32'd13138126;
+        6'd18: dds_increment=32'd14746949;
+        6'd19: dds_increment=32'd15623838;
+        6'd20: dds_increment=32'd17537783;
+        6'd21: dds_increment=32'd19685266;
+        6'd22: dds_increment=32'd22095817;
+        6'd23: dds_increment=32'd23410256;
+        6'd24: dds_increment=32'd26276252;
+        6'd25: dds_increment=32'd29494793;
+        6'd26: dds_increment=32'd31248571;
+        6'd27: dds_increment=32'd35075566;
+        6'd28: dds_increment=32'd39370533;
+        6'd29: dds_increment=32'd44191634;
+        6'd30: dds_increment=32'd46819617;
+        6'd31: dds_increment=32'd52553398;
+        6'd32: dds_increment=32'd58988691;
+        6'd33: dds_increment=32'd62497142;
+        6'd34: dds_increment=32'd70150237;
+        6'd35: dds_increment=32'd78741067;
+        6'd36: dds_increment=32'd88384163;
+        6'd37: dds_increment=32'd93639234;
+        6'd38: dds_increment=32'd105106797;
+        6'd39: dds_increment=32'd117978277;
+        6'd40: dds_increment=32'd124993390;
+        6'd41: dds_increment=32'd140300475;
+        6'd42: dds_increment=32'd157482134;
+        6'd43: dds_increment=32'd176767432;
+        6'd44: dds_increment=32'd187278469;
+        6'd45: dds_increment=32'd210213595;
+        6'd46: dds_increment=32'd235956555;
+        6'd47: dds_increment=32'd249987676;
+        6'd48: dds_increment=32'd280600950;
+        6'd49: dds_increment=32'd314964268;
+        6'd50: dds_increment=32'd353535759;
+        6'd51: dds_increment=32'd374557834;
+        default dds_increment =32'd0 ;
+    endcase
+end
+assign dds_increment_out = dds_increment ;
+endmodule
